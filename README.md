@@ -70,6 +70,60 @@ for archivo in archivos:
 ## **Gráfica Hombre 3**
 <img width="1096" height="495" alt="image" src="https://github.com/user-attachments/assets/a10f4d21-553b-4853-bc44-ff7901ce6592" />
 
+## **Código en Python (Google colab)**
+<pre> ```
+#Transformada de Fourier y su espectro de magnitudes frecuenciales
+    N = len(data)
+    fft_data = np.fft.fft(data)
+    freqs = np.fft.fftfreq(N, d=1/fs)
+
+    # Tomamos solo la mitad positiva del espectro
+    mask = freqs > 0
+    freqs = freqs[mask]
+    mag = np.abs(fft_data[mask])
+
+    # Frecuencia fundamental
+    Ff = freqs[np.argmax(mag)]
+
+    # Frecuencia media
+    f_media = np.sum(freqs * mag) / np.sum(mag)
+
+    # Brillo espectral
+    # similar a la frecuencia media, pero en general es lo mismo
+    brillo = np.sum(freqs * mag) / np.sum(mag)
+
+    # Intensidad (energía de la señal)
+    energia = np.sum(data**2)
+
+    # (Opcional) Graficamos el espectro para ver los picos
+    plt.figure(figsize=(8,4))
+    plt.plot(freqs, mag)
+    plt.title(f"Espectro de {archivo}")
+    plt.xlabel("Frecuencia [Hz]")
+    plt.ylabel("Magnitud ()")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+```
+</pre>
+
+## **Gráfica del espectro de Mujer 1**
+<img width="986" height="485" alt="image" src="https://github.com/user-attachments/assets/6664614c-2c26-4de1-9a23-60d0c7840fb7" />
+
+
+## **Gráfica del espectro de Mujer 1**
+<img width="986" height="484" alt="image" src="https://github.com/user-attachments/assets/021c2715-76eb-4626-a9c6-5e199dff9a24" />
+
+
+## **Gráfica del espectro de Mujer 1**
+<img width="985" height="472" alt="image" src="https://github.com/user-attachments/assets/c4aeec9f-acc1-4f84-93aa-2b6984aa4bb3" />
+
+
+## **Gráfica del espectro de Hombre 1**
+<img width="988" height="481" alt="image" src="https://github.com/user-attachments/assets/373e26cd-4f33-41b9-b7af-829ebb287a6b" />
+
+
+
 # **Parte B**
 
 # **Parte C**
