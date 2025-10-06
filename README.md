@@ -72,7 +72,7 @@ for archivo in archivos:
 
 ## **Código en Python (Google colab)**
 <pre> ```
-#Transformada de Fourier y su espectro de magnitudes frecuenciales
+#Transformada de Fourier, su espectro de magnitudes frecuenciales y caracteristicas de la señal
     N = len(data)
     fft_data = np.fft.fft(data)
     freqs = np.fft.fftfreq(N, d=1/fs)
@@ -104,23 +104,46 @@ for archivo in archivos:
     plt.grid(True)
     plt.tight_layout()
     plt.show()
+
+    # Imprimimos los resultados
+    print(f"--- {archivo} ---")
+    print(f"Frecuencia fundamental: {Ff:.2f} Hz")
+    print(f"Frecuencia media: {f_media:.2f} Hz")
+    print(f"Brillo espectral: {brillo:.2f}")
+    print(f"Energía total: {energia:.4f}\n")            
 ```
 </pre>
 
 ## **Gráfica del espectro de Mujer 1**
 <img width="986" height="485" alt="image" src="https://github.com/user-attachments/assets/6664614c-2c26-4de1-9a23-60d0c7840fb7" />
 
+Resultados:
 
 ## **Gráfica del espectro de Mujer 1**
 <img width="986" height="484" alt="image" src="https://github.com/user-attachments/assets/021c2715-76eb-4626-a9c6-5e199dff9a24" />
 
+Resultados:
 
 ## **Gráfica del espectro de Mujer 1**
 <img width="985" height="472" alt="image" src="https://github.com/user-attachments/assets/c4aeec9f-acc1-4f84-93aa-2b6984aa4bb3" />
 
+Resultados:
 
 ## **Gráfica del espectro de Hombre 1**
 <img width="988" height="481" alt="image" src="https://github.com/user-attachments/assets/373e26cd-4f33-41b9-b7af-829ebb287a6b" />
+
+Resultados:
+
+## **Gráfica del espectro de Hombre 1**
+<img width="987" height="482" alt="image" src="https://github.com/user-attachments/assets/b0c07939-bf9a-42f7-bb0d-87f3739d8424" />
+
+Resultados:
+
+## **Gráfica del espectro de Hombre 1**
+<img width="988" height="486" alt="image" src="https://github.com/user-attachments/assets/47e34d92-f487-4454-b0e2-1c1751342b44" />
+
+
+
 
 
 
