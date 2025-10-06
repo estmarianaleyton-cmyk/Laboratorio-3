@@ -151,3 +151,18 @@ Resultados:
 # **Parte B**
 
 # **Parte C**
+
+#*¿Qué diferencias se observan en la frecuencia fundamental? **
+
+
+#*¿Qué otras diferencias notan en términos de brillo, media o intensidad? **
+
+
+#*Redactar conclusiones sobre el comportamiento de la voz en hombres y mujeres a partir de los análisis realizados.**
+
+
+*Discuta la importancia clínica del jitter y shimmer en el análisis de la voz.**
+
+
+
+
