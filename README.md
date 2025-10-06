@@ -152,16 +152,22 @@ Resultados:
 
 # **Parte C**
 
-#*¿Qué diferencias se observan en la frecuencia fundamental? **
+### **¿Qué diferencias se observan en la frecuencia fundamental?**
 
+Se observa principalmente que las voces femeninas presentan frecuencias fundamentales más altas en comparación con las masculinas. Lo cual era lo esperado pues esto concuerda con las diferencias fisiológicas entre ambos géneros, ya que las cuerdas vocales de las mujeres son más cortas y delgadas, lo que genera una vibración más rápida y, esto produce tonos más agudos. En cambio, las voces masculinas tienen una frecuencia fundamental más baja, reflejando un tono de voz más grave.
 
-#*¿Qué otras diferencias notan en términos de brillo, media o intensidad? **
+### **¿Qué otras diferencias notan en términos de brillo, media o intensidad?**
 
+También se nota que las voces femeninas tienen un brillo y una frecuencia media mayores, lo que las hace sonar más claras y con más presencia en los tonos agudos. Las voces masculinas, en cambio, tienden a concentrar la energía en frecuencias más bajas, lo que les da un tono más profundo.
+En cuanto a la intensidad, las grabaciones femeninas mostraron un poco más de energía, probablemente porque se grabaron con un volumen más alto o con una proyección de voz más fuerte.
 
-#*Redactar conclusiones sobre el comportamiento de la voz en hombres y mujeres a partir de los análisis realizados.**
+### **Redactar conclusiones sobre el comportamiento de la voz en hombres y mujeres a partir de los análisis realizados.**
 
+-El análisis muestra diferencias claras entre las voces de hombres y mujeres. Las mujeres presentan tonos más agudos y brillantes, mientras que los hombres tienen voces más graves y con menos contenido en frecuencias altas. 
+-Estas diferencias reflejan la estructura anatómica de cada grupo y la forma en que las cuerdas vocales vibran.
+-El género influye directamente en el comportamiento espectral de la voz.
 
-*Discuta la importancia clínica del jitter y shimmer en el análisis de la voz.**
+### **Discuta la importancia clínica del jitter y shimmer en el análisis de la voz.**
 
 
 
