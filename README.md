@@ -8,7 +8,7 @@
 
 **Fecha:** 21 de septiembre de 2025
 
-**Título de la práctica:** Convolucion, transformada y estadisticos descriptivos de la señal EOG.
+**Título de la práctica:** Análisis espectral de la voz.
 
 # **Objetivos**
 
