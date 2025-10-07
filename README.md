@@ -51,7 +51,7 @@ for archivo in archivos:
     plt.show()
   ```
 </pre>
-##Diagrama de flujo
+## Diagrama de flujo
 
 <img width="977" height="1317" alt="_Diagrama de flujo (2)" src="https://github.com/user-attachments/assets/6e048102-a3c2-4287-b519-0557a141ffba" />
 
@@ -200,18 +200,13 @@ Resultados:
 
 ## **Código en Python (Google colab)**
 <pre> ```
-import numpy as np
-import scipy.signal as sps
-import soundfile as sf
-import librosa
-import pandas as pd
-
+            
 def bandpass_butter(sig, fs, lowcut, highcut, order=4):
     ny = 0.5 * fs
     b, a = sps.butter(order, [lowcut/ny, highcut/ny], btype='band')
     return sps.filtfilt(b, a, sig)
 
-# --- 2. Detección de picos por ciclo ---
+# Detección de picos por ciclo 
 def detect_peaks_per_cycle(sig, fs, min_f0=60, max_f0=500):
     f0s = librosa.yin(sig.astype(float), fmin=min_f0, fmax=max_f0, sr=fs)
     f0_med = np.nanmedian(f0s[np.isfinite(f0s)])
@@ -221,7 +216,7 @@ def detect_peaks_per_cycle(sig, fs, min_f0=60, max_f0=500):
     peaks, _ = sps.find_peaks(sig, distance=int(0.6 * period_est), prominence=(0.03 * np.max(sig)))
     return peaks, f0_med
 
-# --- 3. Cálculo de Jitter y Shimmer ---
+# Cálculo de Jitter y Shimmer
 def compute_jitter_shimmer(sig, peaks, fs):
     if len(peaks) < 3:
         return None
@@ -239,13 +234,13 @@ def compute_jitter_shimmer(sig, peaks, fs):
 
     return jitter_abs, jitter_rel, shimmer_abs, shimmer_rel
 
-# --- 4. Archivos a analizar ---
+# Archivos a analizar
 archivos = {
     "Mujer1.wav": (150, 500),  # Rango típico voz femenina
     "Hombre1.wav": (80, 400)   # Rango típico voz masculina
 }
 
-# --- 5. Resultados
+# Resultados
 resultados = []
 
 for archivo, (lowcut, highcut) in archivos.items():
@@ -270,15 +265,13 @@ for archivo, (lowcut, highcut) in archivos.items():
     except Exception as e:
         print(f"\nError procesando {archivo}: {e}")
 
-# --- 6. Crear tabla de resultados ---
+# imprimir resultados
 df_resultados = pd.DataFrame(resultados, columns=[
     "Archivo", "F0 (Hz)", "Jitter absoluto (s)", "Jitter relativo (%)",
     "Shimmer absoluto", "Shimmer relativo (%)"
 ])
-
-# --- 7. Función para imprimir ---
 def imprimir_resultados(df):
-    print("\n=== RESULTADOS DE JITTER Y SHIMMER ===")
+    print("\nRESULTADOS DE JITTER Y SHIMMER")
     for i, fila in df.iterrows():
         print(f"\nArchivo: {fila['Archivo']}")
         print(f"Frecuencia fundamental estimada (F0): {fila['F0 (Hz)']:.2f} Hz")
@@ -290,9 +283,9 @@ def imprimir_resultados(df):
                 ```
 </pre>
            
-## Medición del Jitter
+## **Medición del Jitter**
 <pre> ```
-       # --- Filtro pasa-banda ---
+       # Filtro pasa-banda
 def bandpass_butter(sig, fs, lowcut, highcut, order=4):
     nyq = 0.5 * fs
     low = lowcut / nyq
@@ -300,13 +293,13 @@ def bandpass_butter(sig, fs, lowcut, highcut, order=4):
     b, a = butter(order, [low, high], btype='band')
     return filtfilt(b, a, sig)
 
-# --- Detección de picos sucesivos ---
+# Detección de picos sucesivos
 def detectar_picos(sig, fs):
     distancia_min = int(fs / 500)   # F0 máx ≈ 500 Hz → periodo mínimo 2 ms
     peaks, _ = find_peaks(sig, distance=distancia_min)
     return peaks
 
-# --- Cálculo del jitter ---
+# Cálculo del jitter
 def calcular_jitter(sig, fs):
     picos = detectar_picos(sig, fs)
     if len(picos) < 3:
@@ -328,7 +321,7 @@ def calcular_jitter(sig, fs):
 
     return jitter_abs, jitter_rel
 
-# --- Ejemplo de uso ---
+# Ejemplo de uso
 # Cambia el nombre del archivo según tu caso (voz femenina u masculina)
 sig, fs = sf.read("Mujer1.wav")
 sig = sig / np.max(np.abs(sig))  # Normalización
@@ -346,21 +339,20 @@ calcular_jitter(filtrada, fs)
 **Jitter relativo: 22.210 %**
 
 
-## *Medición del Shimmer*
+## **Medición del Shimmer**
 <pre> ```
     import numpy as np
 import soundfile as sf
 import scipy.signal as sps
 import librosa
 
-
-# --- Filtro pasa banda ---
+# Filtro pasa banda 
 def bandpass_butter(sig, fs, lowcut, highcut, order=4):
     ny = 0.5 * fs
     b, a = sps.butter(order, [lowcut/ny, highcut/ny], btype='band')
     return sps.filtfilt(b, a, sig)
 
-# --- Detección de picos por ciclo ---
+# Detección de picos por ciclo
 def detectar_picos_por_ciclo(sig, fs, fmin=60, fmax=500):
     f0s = librosa.yin(sig.astype(float), fmin=fmin, fmax=fmax, sr=fs)
     f0_med = np.nanmedian(f0s[np.isfinite(f0s)])
@@ -370,7 +362,7 @@ def detectar_picos_por_ciclo(sig, fs, fmin=60, fmax=500):
     peaks, _ = sps.find_peaks(sig, distance=int(0.6 * periodo_est), prominence=(0.03 * np.max(sig)))
     return peaks
 
-# --- Cálculo del Shimmer ---
+# Cálculo del Shimmer
 def calcular_shimmer(sig, peaks):
     if len(peaks) < 3:
         return None
@@ -385,7 +377,7 @@ def calcular_shimmer(sig, peaks):
 
     return shimmer_abs, shimmer_rel
 
-# --- Ejemplo de uso ---
+# Ejemplo de uso
 # Asegúrate de haber subido un archivo .wav y reemplaza el nombre aquí ↓
 archivo = "Mujer1.wav"  # o "hombre1.wav"
 
@@ -413,8 +405,7 @@ else:
 **Shimmer absoluto: 0.023937**
 **Shimmer relativo: 11.185 %**
 
-## **Presente los valores obtenidos de jitter y shimmer para cada una de las 6
-grabaciones (3 hombres, 3 mujeres)**
+## **Presente los valores obtenidos de jitter y shimmer para cada una de las 6 grabaciones (3 hombres, 3 mujeres)**
 <pre> ```
    import numpy as np
 import soundfile as sf
@@ -423,11 +414,11 @@ import librosa
 import pandas as pd
 from google.colab import files
 
-# --- 1. Subir archivos .wav ---
+# Subir archivos .wav
 print("Sube tus 6 grabaciones (3 hombres, 3 mujeres)")
 uploaded = files.upload()  # Subir archivos desde tu PC
 
-# --- 2. Funciones auxiliares ---
+# Funciones
 
 def bandpass_butter(sig, fs, lowcut, highcut, order=4):
     """Filtro pasa banda Butterworth"""
@@ -450,12 +441,12 @@ def calcular_jitter_shimmer(sig, peaks, fs):
     if len(peaks) < 3:
         return None
 
-    # --- JITTER ---
+    # JITTER
     Ti = np.diff(peaks) / fs
     jitter_abs = np.mean(np.abs(np.diff(Ti)))
     jitter_rel = (jitter_abs / np.mean(Ti)) * 100
 
-    # --- SHIMMER ---
+    # SHIMMER
     Ai = [np.max(np.abs(sig[peaks[i]:peaks[i+1]])) for i in range(len(peaks)-1)]
     Ai = np.array(Ai)
     shimmer_abs = np.mean(np.abs(np.diff(Ai)))
@@ -463,8 +454,7 @@ def calcular_jitter_shimmer(sig, peaks, fs):
 
     return jitter_rel, shimmer_rel
 
-# --- 3. Archivos a analizar ---
-# Ajusta los nombres según los que subas
+# Archivos a analizar
 archivos = {
     # 3 hombres
     "Hombre1.wav": (80, 400),
@@ -477,7 +467,7 @@ archivos = {
     "Mujer3.wav": (150, 500),
 }
 
-# --- 4. Procesamiento ---
+# Procesamiento 
 resultados = []
 
 for archivo, (lowcut, highcut) in archivos.items():
@@ -507,7 +497,7 @@ for archivo, (lowcut, highcut) in archivos.items():
     except Exception as e:
         print(f"\n Error con {archivo}: {e}")
 
-# --- 5. Mostrar tabla final ---
+# Mostrar tabla final
 
  ```
 </pre>
