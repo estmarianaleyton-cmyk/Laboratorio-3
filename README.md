@@ -542,6 +542,9 @@ for archivo, (lowcut, highcut) in archivos.items():
 | Mujer2.wav   | 223.651520 | 22.242986 | 11.899299 |
 | Mujer3.wav   | 225.890788 | 18.805798 | 13.354138 |
 
+
+<img width="1760" height="1360" alt="_Diagrama de flujo" src="https://github.com/user-attachments/assets/bb9f7162-cd9f-4f44-b1e5-1c5be530ed59" />
+
 # **Parte C**
 
 ### **¿Qué diferencias se observan en la frecuencia fundamental?**
