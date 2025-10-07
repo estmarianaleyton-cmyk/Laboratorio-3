@@ -349,6 +349,11 @@ calcular_jitter(filtrada, fs)
  ```
 </pre>
 
+## Diagrama de flujo 
+
+<img width="1402" height="1397" alt="_Diagrama de flujo - Página 3" src="https://github.com/user-attachments/assets/c19e0dd4-08c2-4a6e-b9be-afa2a05f5d12" />
+
+
 **Resultados:**
 
 **Frecuencia fundamental estimada (F0):** 282.42 Hz
