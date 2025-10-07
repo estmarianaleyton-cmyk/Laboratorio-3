@@ -335,6 +335,7 @@ filtrada = bandpass_butter(sig, fs, 150, 500)
 
 # Calcular jitter
 calcular_jitter(filtrada, fs)     
+ ```
 </pre>
 
 ## Frecuencia fundamental estimada (F0): 282.42 Hz
