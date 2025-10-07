@@ -6,7 +6,7 @@
 
 **Estudiantes:** Dubrasca Martinez, Mariana Leyton, Maria Fernanda Castellanos
 
-**Fecha:** 21 de septiembre de 2025
+**Fecha:** 6 de Octubre del 2025
 
 **Título de la práctica:** Análisis espectral de la voz.
 
@@ -353,7 +353,6 @@ calcular_jitter(filtrada, fs)
 
 <img width="1402" height="1397" alt="_Diagrama de flujo - Página 3" src="https://github.com/user-attachments/assets/c19e0dd4-08c2-4a6e-b9be-afa2a05f5d12" />
 
-
 **Resultados:**
 
 **Frecuencia fundamental estimada (F0):** 282.42 Hz
@@ -556,9 +555,11 @@ En cuanto a la intensidad, las grabaciones femeninas mostraron un poco más de e
 
 ### **Redactar conclusiones sobre el comportamiento de la voz en hombres y mujeres a partir de los análisis realizados.**
 
--El análisis muestra diferencias claras entre las voces de hombres y mujeres. Las mujeres presentan tonos más agudos y brillantes, mientras que los hombres tienen voces más graves y con menos contenido en frecuencias altas. 
--Estas diferencias reflejan la estructura anatómica de cada grupo y la forma en que las cuerdas vocales vibran.
--El género influye directamente en el comportamiento espectral de la voz.
+**-** El análisis muestra diferencias claras entre las voces de hombres y mujeres. Las mujeres presentan tonos más agudos y brillantes, mientras que los hombres tienen voces más graves y con menos contenido en frecuencias altas. 
+
+**-** Estas diferencias reflejan la estructura anatómica de cada grupo y la forma en que las cuerdas vocales vibran. 
+
+**-** El género influye directamente en el comportamiento espectral de la voz. 
 
 ### **Discuta la importancia clínica del jitter y shimmer en el análisis de la voz.**
 El **jitter** y el **shimmer** son medidas que ayudan a evaluar cómo funciona la voz. El jitter muestra si la frecuencia del sonido cambia mucho entre un ciclo y otro, es decir, si las cuerdas vocales vibran de forma regular. El shimmer indica si la fuerza o volumen de la voz cambia de un ciclo a otro. Cuando estos valores son altos, puede significar que hay problemas en las cuerdas vocales, como ronquera, fatiga o alguna lesión. Por eso, son muy útiles para detectar, controlar y evaluar tratamientos en personas con dificultades o enfermedades de la voz.
