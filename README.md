@@ -117,32 +117,32 @@ for archivo in archivos:
 ## **Gráfica del espectro de Mujer 1**
 <img width="986" height="485" alt="image" src="https://github.com/user-attachments/assets/6664614c-2c26-4de1-9a23-60d0c7840fb7" />
 
-Resultados:
+Resultados: Frecuencia fundamental: 530.56 Hz, Frecuencia media: 2681.71 Hz, Brillo espectral: 2681.71, Energía total: 3850.5923
 
 ## **Gráfica del espectro de Mujer 2**
 <img width="986" height="484" alt="image" src="https://github.com/user-attachments/assets/021c2715-76eb-4626-a9c6-5e199dff9a24" />
 
-Resultados:
+Resultados: Frecuencia fundamental: 264.51 Hz, Frecuencia media: 2551.90 Hz, Brillo espectral: 2551.90, Energía total: 3440.0405
 
 ## **Gráfica del espectro de Mujer 3**
 <img width="985" height="472" alt="image" src="https://github.com/user-attachments/assets/c4aeec9f-acc1-4f84-93aa-2b6984aa4bb3" />
 
-Resultados:
+Resultados: Frecuencia fundamental: 209.44 Hz, Frecuencia media: 2734.82, Hz Brillo espectral: 2734.82, Energía total: 2708.5893
 
 ## **Gráfica del espectro de Hombre 1**
 <img width="988" height="481" alt="image" src="https://github.com/user-attachments/assets/373e26cd-4f33-41b9-b7af-829ebb287a6b" />
 
-Resultados:
+Resultados: Frecuencia fundamental: 265.80 Hz, Frecuencia media: 2238.11, Hz Brillo espectral: 2238.11, Energía total: 1800.7157
 
 ## **Gráfica del espectro de Hombre 2**
 <img width="987" height="482" alt="image" src="https://github.com/user-attachments/assets/b0c07939-bf9a-42f7-bb0d-87f3739d8424" />
 
-Resultados:
+Resultados:Frecuencia fundamental: 115.14 Hz, Frecuencia media: 1640.43, Hz Brillo espectral: 1640.43, Energía total: 1933.2474
 
 ## **Gráfica del espectro de Hombre 3**
 <img width="988" height="486" alt="image" src="https://github.com/user-attachments/assets/47e34d92-f487-4454-b0e2-1c1751342b44" />
 
-Resultados:
+Resultados:Frecuencia fundamental: 209.78 Hz, Frecuencia media: 1839.44 Hz, Brillo espectral: 1839.44, Energía total: 1738.4168
 
 
 
