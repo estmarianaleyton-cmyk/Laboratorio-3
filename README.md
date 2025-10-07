@@ -497,34 +497,22 @@ for archivo, (lowcut, highcut) in archivos.items():
         if res:
             jitter_rel, shimmer_rel = res
             resultados.append([archivo, f0_est, jitter_rel, shimmer_rel])
-            print(f"\n✅ {archivo}")
+            print(f"\n {archivo}")
             print(f"F0 estimada: {f0_est:.2f} Hz")
             print(f"Jitter relativo: {jitter_rel:.3f} %")
             print(f"Shimmer relativo: {shimmer_rel:.3f} %")
         else:
-            print(f"\n⚠️ {archivo}: No se detectaron suficientes ciclos")
+            print(f"\n {archivo}: No se detectaron suficientes ciclos")
 
     except Exception as e:
-        print(f"\n❌ Error con {archivo}: {e}")
+        print(f"\n Error con {archivo}: {e}")
 
 # --- 5. Mostrar tabla final ---
-if resultados:
-    df_resultados = pd.DataFrame(resultados, columns=["Archivo", "F0 (Hz)", "Jitter (%)", "Shimmer (%)"])
-    print("\n=== RESULTADOS FINALES ===")
-    display(df_resultados)
-else:
-    print("\nNo se generaron resultados. Verifica tus archivos WAV.")
 
  ```
 </pre>
-git init
-git add .
-git commit -m "Primera versión del cuadro"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/cuadro-datos.git
-git push -u origin main
 
-### 🧾 Resultados Finales
+###  Resultados Finales
 
 | Archivo       | F0 (Hz)   | Jitter (%) | Shimmer (%) |
 |----------------|-----------|-------------|--------------|
