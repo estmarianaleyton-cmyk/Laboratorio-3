@@ -405,6 +405,7 @@ if res:
 else:
     print("No se detectaron suficientes ciclos para calcular el shimmer.")
         
+ ```
 </pre>
 
 ## Shimmer absoluto: 0.023937
@@ -412,7 +413,7 @@ else:
 
 ## **Presente los valores obtenidos de jitter y shimmer para cada una de las 6
 grabaciones (3 hombres, 3 mujeres)**
-</pre>
+<pre> ```
    import numpy as np
 import soundfile as sf
 import scipy.signal as sps
@@ -521,6 +522,9 @@ Archivo	F0 (Hz)	Jitter (%)	Shimmer (%)
 3	Mujer1.wav	225.442978	17.311000	11.176087
 4	Mujer2.wav	223.651520	22.242986	11.899299
 5	Mujer3.wav	225.890788	18.805798	13.354138
+
+ ```
+</pre>
 
 # **Parte C**
 
