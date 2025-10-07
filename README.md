@@ -123,6 +123,10 @@ for archivo in archivos:
 ```
 </pre>
 
+## Diagrama de flujo
+<img width="940" height="1380" alt="_Diagrama de flujo - Página 2" src="https://github.com/user-attachments/assets/512eec34-2846-4cb4-922a-65efdb5e475e" />
+
+
 ## **Gráfica del espectro de Mujer 1**
 <img width="986" height="485" alt="image" src="https://github.com/user-attachments/assets/6664614c-2c26-4de1-9a23-60d0c7840fb7" />
 
