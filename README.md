@@ -341,10 +341,9 @@ calcular_jitter(filtrada, fs)
  ```
 </pre>
 
-## Frecuencia fundamental estimada (F0): 282.42 Hz
-## Jitter absoluto: 0.000786 s
-## Jitter relativo: 22.210 %
-(np.float64(0.0007864199803632794), np.float64(22.210179073700758))
+**Frecuencia fundamental estimada (F0): 282.42 Hz**
+**Jitter absoluto: 0.000786 s**
+**Jitter relativo: 22.210 %**
 
 
 ## *Medición del Shimmer*
@@ -411,8 +410,8 @@ else:
  ```
 </pre>
 
-## Shimmer absoluto: 0.023937
-## Shimmer relativo: 11.185 %
+**Shimmer absoluto: 0.023937**
+**Shimmer relativo: 11.185 %**
 
 ## **Presente los valores obtenidos de jitter y shimmer para cada una de las 6
 grabaciones (3 hombres, 3 mujeres)**
