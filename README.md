@@ -513,7 +513,14 @@ if resultados:
 else:
     print("\nNo se generaron resultados. Verifica tus archivos WAV.")
 
+ ```
 </pre>
+git init
+git add .
+git commit -m "Primera versión del cuadro"
+git branch -M main
+git remote add origin https://github.com/TU_USUARIO/cuadro-datos.git
+git push -u origin main
 === RESULTADOS FINALES ===
 Archivo	F0 (Hz)	Jitter (%)	Shimmer (%)
 0	Hombre1.wav	128.659284	24.721386	11.096075
@@ -523,8 +530,7 @@ Archivo	F0 (Hz)	Jitter (%)	Shimmer (%)
 4	Mujer2.wav	223.651520	22.242986	11.899299
 5	Mujer3.wav	225.890788	18.805798	13.354138
 
- ```
-</pre>
+
 
 # **Parte C**
 
