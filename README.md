@@ -521,14 +521,18 @@ git commit -m "Primera versión del cuadro"
 git branch -M main
 git remote add origin https://github.com/TU_USUARIO/cuadro-datos.git
 git push -u origin main
-=== RESULTADOS FINALES ===
-Archivo	F0 (Hz)	Jitter (%)	Shimmer (%)
-0	Hombre1.wav	128.659284	24.721386	11.096075
-1	Hombre2.wav	114.767242	21.893235	12.678212
-2	Hombre3.wav	117.968080	23.197631	14.326801
-3	Mujer1.wav	225.442978	17.311000	11.176087
-4	Mujer2.wav	223.651520	22.242986	11.899299
-5	Mujer3.wav	225.890788	18.805798	13.354138
+
+### 🧾 Resultados Finales
+
+| Archivo       | F0 (Hz)   | Jitter (%) | Shimmer (%) |
+|----------------|-----------|-------------|--------------|
+| Hombre1.wav | 128.659284 | 24.721386 | 11.096075 |
+| Hombre2.wav | 114.767242 | 21.893235 | 12.678212 |
+| Hombre3.wav | 117.968080 | 23.197631 | 14.326801 |
+| Mujer1.wav   | 225.442978 | 17.311000 | 11.176087 |
+| Mujer2.wav   | 223.651520 | 22.242986 | 11.899299 |
+| Mujer3.wav   | 225.890788 | 18.805798 | 13.354138 |
+
 
 
 
