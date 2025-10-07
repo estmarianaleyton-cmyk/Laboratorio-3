@@ -29,7 +29,7 @@ import numpy as np
 archivos = ["Mujer1.wav", "Mujer2.wav", "Mujer3.wav",
             "Hombre1.wav", "Hombre2.wav", "Hombre3.wav"]
 
-# Recorremos cada archivo
+# Se recorre cada archivo
 for archivo in archivos:
     # Leer el archivo wav
     fs, data = wavfile.read(archivo)
@@ -92,13 +92,13 @@ for archivo in archivos:
     f_media = np.sum(freqs * mag) / np.sum(mag)
 
     # Brillo espectral
-    # similar a la frecuencia media, pero en general es lo mismo
+    # similar a la frecuencia media
     brillo = np.sum(freqs * mag) / np.sum(mag)
 
     # Intensidad (energía de la señal)
     energia = np.sum(data**2)
 
-    # (Opcional) Graficamos el espectro para ver los picos
+    # Graficar
     plt.figure(figsize=(8,4))
     plt.plot(freqs, mag)
     plt.title(f"Espectro de {archivo}")
@@ -108,7 +108,7 @@ for archivo in archivos:
     plt.tight_layout()
     plt.show()
 
-    # Imprimimos los resultados
+    # Imprimir resultados
     print(f"--- {archivo} ---")
     print(f"Frecuencia fundamental: {Ff:.2f} Hz")
     print(f"Frecuencia media: {f_media:.2f} Hz")
@@ -120,7 +120,7 @@ for archivo in archivos:
 ## **Gráfica del espectro de Mujer 1**
 <img width="986" height="485" alt="image" src="https://github.com/user-attachments/assets/6664614c-2c26-4de1-9a23-60d0c7840fb7" />
 
-Resultados: 
+ **Resultados:** 
 
 **Frecuencia fundamental:** 530.56 Hz 
 
@@ -133,7 +133,7 @@ Resultados:
 ## **Gráfica del espectro de Mujer 2**
 <img width="986" height="484" alt="image" src="https://github.com/user-attachments/assets/021c2715-76eb-4626-a9c6-5e199dff9a24" />
 
-Resultados: 
+**Resultados:**
 
 **Frecuencia fundamental:** 264.51 Hz 
 
@@ -146,7 +146,7 @@ Resultados:
 ## **Gráfica del espectro de Mujer 3**
 <img width="985" height="472" alt="image" src="https://github.com/user-attachments/assets/c4aeec9f-acc1-4f84-93aa-2b6984aa4bb3" />
 
-Resultados: 
+**Resultados:**
 
 **Frecuencia fundamental** 209.44 Hz
 
@@ -159,7 +159,7 @@ Resultados:
 ## **Gráfica del espectro de Hombre 1**
 <img width="988" height="481" alt="image" src="https://github.com/user-attachments/assets/373e26cd-4f33-41b9-b7af-829ebb287a6b" />
 
-Resultados:
+**Resultados:**
 
 **Frecuencia fundamental:** 265.80 Hz
 
@@ -172,7 +172,7 @@ Resultados:
 ## **Gráfica del espectro de Hombre 2**
 <img width="987" height="482" alt="image" src="https://github.com/user-attachments/assets/b0c07939-bf9a-42f7-bb0d-87f3739d8424" />
 
-Resultados:
+**Resultados:**
 
 **Frecuencia fundamental:** 115.14 Hz
 
@@ -185,7 +185,7 @@ Resultados:
 ## **Gráfica del espectro de Hombre 3**
 <img width="988" height="486" alt="image" src="https://github.com/user-attachments/assets/47e34d92-f487-4454-b0e2-1c1751342b44" />
 
-Resultados:
+**Resultados:**
 
 **Frecuencia fundamental:** 209.78 Hz
 
@@ -200,6 +200,11 @@ Resultados:
 
 ## **Código en Python (Google colab)**
 <pre> ```
+import numpy as np
+import scipy.signal as sps
+import soundfile as sf
+import librosa
+import pandas as pd
             
 def bandpass_butter(sig, fs, lowcut, highcut, order=4):
     ny = 0.5 * fs
@@ -334,14 +339,18 @@ calcular_jitter(filtrada, fs)
  ```
 </pre>
 
-**Frecuencia fundamental estimada (F0): 282.42 Hz**
-**Jitter absoluto: 0.000786 s**
-**Jitter relativo: 22.210 %**
+**Resultados:**
+
+**Frecuencia fundamental estimada (F0):** 282.42 Hz
+
+**Jitter absoluto:** 0.000786 s
+
+**Jitter relativo:** 22.210 %
 
 
 ## **Medición del Shimmer**
 <pre> ```
-    import numpy as np
+import numpy as np
 import soundfile as sf
 import scipy.signal as sps
 import librosa
@@ -401,13 +410,15 @@ else:
         
  ```
 </pre>
+**Resultados:**
 
-**Shimmer absoluto: 0.023937**
-**Shimmer relativo: 11.185 %**
+**Shimmer absoluto:** 0.023937
+
+**Shimmer relativo:** 11.185 %
 
 ## **Presente los valores obtenidos de jitter y shimmer para cada una de las 6 grabaciones (3 hombres, 3 mujeres)**
 <pre> ```
-   import numpy as np
+import numpy as np
 import soundfile as sf
 import scipy.signal as sps
 import librosa
@@ -419,7 +430,6 @@ print("Sube tus 6 grabaciones (3 hombres, 3 mujeres)")
 uploaded = files.upload()  # Subir archivos desde tu PC
 
 # Funciones
-
 def bandpass_butter(sig, fs, lowcut, highcut, order=4):
     """Filtro pasa banda Butterworth"""
     ny = 0.5 * fs
@@ -512,9 +522,6 @@ for archivo, (lowcut, highcut) in archivos.items():
 | Mujer1.wav   | 225.442978 | 17.311000 | 11.176087 |
 | Mujer2.wav   | 223.651520 | 22.242986 | 11.899299 |
 | Mujer3.wav   | 225.890788 | 18.805798 | 13.354138 |
-
-
-
 
 # **Parte C**
 
