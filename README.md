@@ -474,7 +474,7 @@ En cuanto a la intensidad, las grabaciones femeninas mostraron un poco más de e
 **-** El género influye directamente en el comportamiento espectral de la voz. 
 
 ### **Discuta la importancia clínica del jitter y shimmer en el análisis de la voz.**
-El **jitter** y el **shimmer** son medidas que ayudan a evaluar cómo funciona la voz. El jitter muestra si la frecuencia del sonido cambia mucho entre un ciclo y otro, es decir, si las cuerdas vocales vibran de forma regular. El shimmer indica si la fuerza o volumen de la voz cambia de un ciclo a otro. Cuando estos valores son altos, puede significar que hay problemas en las cuerdas vocales, como ronquera, fatiga o alguna lesión. Por eso, son muy útiles para detectar, controlar y evaluar tratamientos en personas con dificultades o enfermedades de la voz.
+El jitter y el shimmer son medidas que ayudan a evaluar cómo funciona la voz. El jitter muestra si la frecuencia del sonido cambia mucho entre un ciclo y otro, es decir, si las cuerdas vocales vibran de forma regular. El shimmer indica si la fuerza o volumen de la voz cambia de un ciclo a otro. Cuando estos valores son altos, puede significar que hay problemas en las cuerdas vocales, como ronquera, fatiga o alguna lesión. Por eso, son muy útiles para detectar, controlar y evaluar tratamientos en personas con dificultades o enfermedades de la voz.
 
 
 
