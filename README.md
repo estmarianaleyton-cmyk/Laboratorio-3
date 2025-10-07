@@ -51,6 +51,9 @@ for archivo in archivos:
     plt.show()
   ```
 </pre>
+##Diagrama de flujo
+
+<img width="977" height="1317" alt="_Diagrama de flujo (2)" src="https://github.com/user-attachments/assets/6e048102-a3c2-4287-b519-0557a141ffba" />
 
 ## **Gráfica Mujer 1**
 <img width="1098" height="485" alt="image" src="https://github.com/user-attachments/assets/31643bb8-661c-4d50-9fbd-64e15ddc52d8" />
