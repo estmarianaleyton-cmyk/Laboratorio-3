@@ -195,6 +195,99 @@ Resultados:
 
 # **Parte B**
 
+## **Código en Python (Google colab)**
+<pre> ```
+import numpy as np
+import scipy.signal as sps
+import soundfile as sf
+import librosa
+import pandas as pd
+
+def bandpass_butter(sig, fs, lowcut, highcut, order=4):
+    ny = 0.5 * fs
+    b, a = sps.butter(order, [lowcut/ny, highcut/ny], btype='band')
+    return sps.filtfilt(b, a, sig)
+
+# --- 2. Detección de picos por ciclo ---
+def detect_peaks_per_cycle(sig, fs, min_f0=60, max_f0=500):
+    f0s = librosa.yin(sig.astype(float), fmin=min_f0, fmax=max_f0, sr=fs)
+    f0_med = np.nanmedian(f0s[np.isfinite(f0s)])
+    if np.isnan(f0_med):
+        f0_med = 200
+    period_est = int(fs / f0_med)
+    peaks, _ = sps.find_peaks(sig, distance=int(0.6 * period_est), prominence=(0.03 * np.max(sig)))
+    return peaks, f0_med
+
+# --- 3. Cálculo de Jitter y Shimmer ---
+def compute_jitter_shimmer(sig, peaks, fs):
+    if len(peaks) < 3:
+        return None
+
+    # Periodos (s)
+    Ti = np.diff(peaks) / fs
+    jitter_abs = np.mean(np.abs(np.diff(Ti)))
+    jitter_rel = (jitter_abs / np.mean(Ti)) * 100
+
+    # Amplitudes máximas por ciclo
+    Ai = [np.max(np.abs(sig[peaks[i]:peaks[i+1]])) for i in range(len(peaks)-1)]
+    Ai = np.array(Ai)
+    shimmer_abs = np.mean(np.abs(np.diff(Ai)))
+    shimmer_rel = (shimmer_abs / np.mean(Ai)) * 100
+
+    return jitter_abs, jitter_rel, shimmer_abs, shimmer_rel
+
+# --- 4. Archivos a analizar ---
+archivos = {
+    "Mujer1.wav": (150, 500),  # Rango típico voz femenina
+    "Hombre1.wav": (80, 400)   # Rango típico voz masculina
+}
+
+# --- 5. Procesamiento principal ---
+resultados = []
+
+for archivo, (lowcut, highcut) in archivos.items():
+    try:
+        sig, fs = sf.read(archivo)
+        sig = sig / np.max(np.abs(sig))  # Normalización
+
+        # Filtro pasa banda
+        filtrada = bandpass_butter(sig, fs, lowcut, highcut)
+
+        # Detección de picos y frecuencia fundamental
+        peaks, f0_est = detect_peaks_per_cycle(filtrada, fs, min_f0=lowcut, max_f0=highcut)
+
+        # Cálculo de jitter y shimmer
+        res = compute_jitter_shimmer(filtrada, peaks, fs)
+
+        if res is not None:
+            jitter_abs, jitter_rel, shimmer_abs, shimmer_rel = res
+            resultados.append([archivo, f0_est, jitter_abs, jitter_rel, shimmer_abs, shimmer_rel])
+        else:
+            print(f"\nArchivo: {archivo} - No se detectaron suficientes ciclos.")
+    except Exception as e:
+        print(f"\nError procesando {archivo}: {e}")
+
+# --- 6. Crear tabla de resultados ---
+df_resultados = pd.DataFrame(resultados, columns=[
+    "Archivo", "F0 (Hz)", "Jitter absoluto (s)", "Jitter relativo (%)",
+    "Shimmer absoluto", "Shimmer relativo (%)"
+])
+
+# --- 7. Función para imprimir ---
+def imprimir_resultados(df):
+    print("\n=== RESULTADOS DE JITTER Y SHIMMER ===")
+    for i, fila in df.iterrows():
+        print(f"\nArchivo: {fila['Archivo']}")
+        print(f"Frecuencia fundamental estimada (F0): {fila['F0 (Hz)']:.2f} Hz")
+        print(f"Jitter absoluto: {fila['Jitter absoluto (s)']:.6f} s")
+        print(f"Jitter relativo: {fila['Jitter relativo (%)']:.3f} %")
+        print(f"Shimmer absoluto: {fila['Shimmer absoluto']:.6f}")
+        print(f"Shimmer relativo: {fila['Shimmer relativo (%)']:.3f} %")
+              ```
+</pre>
+           
+
+
 # **Parte C**
 
 ### **¿Qué diferencias se observan en la frecuencia fundamental?**
