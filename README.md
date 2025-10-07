@@ -206,8 +206,7 @@ for archivo in archivos:
 
 # **Parte B**
 
-## **Código en Python (Google colab)**
-           
+    
 ## **Medición del Jitter**
 <pre> ```
        # Filtro pasa-banda
