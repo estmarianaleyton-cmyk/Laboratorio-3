@@ -426,6 +426,11 @@ else:
 
 **Shimmer relativo:** 11.185 %
 
+<img width="785" height="769" alt="image" src="https://github.com/user-attachments/assets/09ed54b7-d14d-4d57-8550-fac8ffa2f45f" />
+
+
+
+
 ## **Presente los valores obtenidos de jitter y shimmer para cada una de las 6 grabaciones (3 hombres, 3 mujeres)**
 <pre> ```
 import numpy as np
